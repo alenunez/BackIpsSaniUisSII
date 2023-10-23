@@ -27,7 +27,7 @@ import com.proyecto.saniUis.model.Usuario;
 import com.proyecto.saniUis.service.interfaces.IUsuarioService;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "**", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RequestMapping("/usuario")
 public class UsuarioController {
 
