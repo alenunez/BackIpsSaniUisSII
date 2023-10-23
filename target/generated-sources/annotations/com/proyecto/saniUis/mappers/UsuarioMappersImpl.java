@@ -7,8 +7,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-11T22:14:32-0500",
-    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230213-1046, environment: Java 17.0.6 (Eclipse Adoptium)"
+    date = "2023-10-23T14:10:48-0500",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class UsuarioMappersImpl implements UsuarioMappers {
 
@@ -21,16 +21,16 @@ public class UsuarioMappersImpl implements UsuarioMappers {
         UsuarioDTO usuarioDTO = new UsuarioDTO();
 
         usuarioDTO.setDescripcionRol( usuarioRolDescripcion( usuario ) );
+        usuarioDTO.setIdUsuario( usuario.getIdUsuario() );
+        usuarioDTO.setPrimerNombre( usuario.getPrimerNombre() );
         usuarioDTO.setContrasena( usuario.getContrasena() );
-        usuarioDTO.setCorreoElectronico( usuario.getCorreoElectronico() );
+        usuarioDTO.setSegundoNombre( usuario.getSegundoNombre() );
+        usuarioDTO.setPrimerApellido( usuario.getPrimerApellido() );
+        usuarioDTO.setSegundoApellido( usuario.getSegundoApellido() );
         usuarioDTO.setDocumentoIdentidad( usuario.getDocumentoIdentidad() );
         usuarioDTO.setFechaCreacion( usuario.getFechaCreacion() );
+        usuarioDTO.setCorreoElectronico( usuario.getCorreoElectronico() );
         usuarioDTO.setIdRol( usuario.getIdRol() );
-        usuarioDTO.setIdUsuario( usuario.getIdUsuario() );
-        usuarioDTO.setPrimerApellido( usuario.getPrimerApellido() );
-        usuarioDTO.setPrimerNombre( usuario.getPrimerNombre() );
-        usuarioDTO.setSegundoApellido( usuario.getSegundoApellido() );
-        usuarioDTO.setSegundoNombre( usuario.getSegundoNombre() );
 
         return usuarioDTO;
     }
@@ -44,15 +44,15 @@ public class UsuarioMappersImpl implements UsuarioMappers {
         Usuario usuario = new Usuario();
 
         usuario.setContrasena( usuarioDTO.getContrasena() );
-        usuario.setCorreoElectronico( usuarioDTO.getCorreoElectronico() );
+        usuario.setIdUsuario( usuarioDTO.getIdUsuario() );
+        usuario.setPrimerNombre( usuarioDTO.getPrimerNombre() );
+        usuario.setSegundoNombre( usuarioDTO.getSegundoNombre() );
+        usuario.setPrimerApellido( usuarioDTO.getPrimerApellido() );
+        usuario.setSegundoApellido( usuarioDTO.getSegundoApellido() );
         usuario.setDocumentoIdentidad( usuarioDTO.getDocumentoIdentidad() );
         usuario.setFechaCreacion( usuarioDTO.getFechaCreacion() );
+        usuario.setCorreoElectronico( usuarioDTO.getCorreoElectronico() );
         usuario.setIdRol( usuarioDTO.getIdRol() );
-        usuario.setIdUsuario( usuarioDTO.getIdUsuario() );
-        usuario.setPrimerApellido( usuarioDTO.getPrimerApellido() );
-        usuario.setPrimerNombre( usuarioDTO.getPrimerNombre() );
-        usuario.setSegundoApellido( usuarioDTO.getSegundoApellido() );
-        usuario.setSegundoNombre( usuarioDTO.getSegundoNombre() );
 
         return usuario;
     }
