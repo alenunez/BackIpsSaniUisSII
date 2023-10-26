@@ -31,7 +31,7 @@ build/
 .vscode/
 src/main/resources/
 src/main/java/com/proyecto/saniUis/util/
-target/
+
 
 pom.xml
 
