@@ -1,6 +1,7 @@
 package com.proyecto.saniUis.service.interfaces;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -15,12 +16,12 @@ public interface IUsuarioService {
 
     public List<Usuario> getAllUsuarios();
 
-    public Usuario findById(Long id);
+    public Usuario findById(UUID id);
 
     public Usuario login(UsuarioDTO usuarioDTO);
 
     public Usuario updateUsuario(UsuarioDTO usuarioDTO);
 
-    public Usuario deleteUsuario(Long id);
+    public Usuario deleteUsuario(UUID id);
 
 }

@@ -1,10 +1,15 @@
 package com.proyecto.saniUis.dto;
 
-import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+@Getter
+@Setter
 public class UsuarioDTO {
 
-    private Long idUsuario;
+    private UUID idUsuario;
     private String primerNombre;
     private String contrasena;
     private String segundoNombre;
@@ -16,94 +21,6 @@ public class UsuarioDTO {
     private Long idRol;
     private String descripcionRol;
 
-    // Getters and Setters
-
-    public Long getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getPrimerNombre() {
-        return primerNombre;
-    }
-
-    public void setPrimerNombre(String primerNombre) {
-        this.primerNombre = primerNombre;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
-
-    public String getSegundoNombre() {
-        return segundoNombre;
-    }
-
-    public void setSegundoNombre(String segundoNombre) {
-        this.segundoNombre = segundoNombre;
-    }
-
-    public String getPrimerApellido() {
-        return primerApellido;
-    }
-
-    public void setPrimerApellido(String primerApellido) {
-        this.primerApellido = primerApellido;
-    }
-
-    public String getSegundoApellido() {
-        return segundoApellido;
-    }
-
-    public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
-    }
-
-    public Integer getDocumentoIdentidad() {
-        return documentoIdentidad;
-    }
-
-    public void setDocumentoIdentidad(Integer documentoIdentidad) {
-        this.documentoIdentidad = documentoIdentidad;
-    }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
-    public Long getIdRol() {
-        return idRol;
-    }
-
-    public void setIdRol(Long idrol) {
-        this.idRol = idrol;
-    }
-
-    public String getDescripcionRol() {
-        return descripcionRol;
-    }
-
-    public void setDescripcionRol(String descripcionRol) {
-        this.descripcionRol = descripcionRol;
-    }
+  
     
 }

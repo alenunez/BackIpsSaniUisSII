@@ -3,9 +3,11 @@ package com.proyecto.saniUis.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -76,7 +78,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/id/{id}")
-    public ResponseEntity<UsuarioDTO> getById(@PathVariable(value = "id", required = true) Long aId){
+    public ResponseEntity<UsuarioDTO> getById(@PathVariable(value = "id", required = true) UUID aId){
         Usuario usuario = iUsuarioService.findById(aId);
         if(usuario ==null){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -84,7 +86,7 @@ public class UsuarioController {
         return new ResponseEntity<>(UsuarioMappers.INSTANCE.usuarioToUsuarioDTO(usuario), HttpStatus.OK);
     }
     @DeleteMapping("/id/{id}")
-    public ResponseEntity<Object> deleteUsuario(@PathVariable(value = "id", required = true) Long aId) {
+    public ResponseEntity<Object> deleteUsuario(@PathVariable(value = "id", required = true) UUID aId) {
         Usuario usuario = iUsuarioService.deleteUsuario(aId);
         if (usuario == null) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
@@ -100,7 +102,7 @@ public class UsuarioController {
     }
 
     @Autowired
-    public UsuarioController(IUsuarioService iUsuarioService) {
+    public UsuarioController(@Qualifier("usuarioServiceImpl") IUsuarioService iUsuarioService) {
         this.iUsuarioService = iUsuarioService;
     }
 

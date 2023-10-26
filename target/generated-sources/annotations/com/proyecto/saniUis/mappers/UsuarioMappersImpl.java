@@ -2,12 +2,13 @@ package com.proyecto.saniUis.mappers;
 
 import com.proyecto.saniUis.dto.UsuarioDTO;
 import com.proyecto.saniUis.model.Rol;
+import com.proyecto.saniUis.model.RolNombre;
 import com.proyecto.saniUis.model.Usuario;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-23T14:10:48-0500",
+    date = "2023-10-26T08:05:48-0500",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class UsuarioMappersImpl implements UsuarioMappers {
@@ -20,7 +21,10 @@ public class UsuarioMappersImpl implements UsuarioMappers {
 
         UsuarioDTO usuarioDTO = new UsuarioDTO();
 
-        usuarioDTO.setDescripcionRol( usuarioRolDescripcion( usuario ) );
+        RolNombre rolNombre = usuarioRolRolNombre( usuario );
+        if ( rolNombre != null ) {
+            usuarioDTO.setDescripcionRol( rolNombre.name() );
+        }
         usuarioDTO.setIdUsuario( usuario.getIdUsuario() );
         usuarioDTO.setPrimerNombre( usuario.getPrimerNombre() );
         usuarioDTO.setContrasena( usuario.getContrasena() );
@@ -57,7 +61,7 @@ public class UsuarioMappersImpl implements UsuarioMappers {
         return usuario;
     }
 
-    private String usuarioRolDescripcion(Usuario usuario) {
+    private RolNombre usuarioRolRolNombre(Usuario usuario) {
         if ( usuario == null ) {
             return null;
         }
@@ -65,10 +69,10 @@ public class UsuarioMappersImpl implements UsuarioMappers {
         if ( rol == null ) {
             return null;
         }
-        String descripcion = rol.getDescripcion();
-        if ( descripcion == null ) {
+        RolNombre rolNombre = rol.getRolNombre();
+        if ( rolNombre == null ) {
             return null;
         }
-        return descripcion;
+        return rolNombre;
     }
 }

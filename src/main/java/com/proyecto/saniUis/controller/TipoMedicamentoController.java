@@ -10,6 +10,7 @@ import com.proyecto.saniUis.mappers.TipoMedicamentoMapper;
 import com.proyecto.saniUis.model.TipoMedicamento;
 import com.proyecto.saniUis.service.interfaces.ITipoMedicamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -87,7 +88,7 @@ public class TipoMedicamentoController {
     }
 
     @Autowired
-    public TipoMedicamentoController(ITipoMedicamentoService iTipoMedicamentoService) {
+    public TipoMedicamentoController(@Qualifier("tipoMedicamentoServiceImpl") ITipoMedicamentoService iTipoMedicamentoService) {
         this.iTipoMedicamentoService = iTipoMedicamentoService;
     }
 }

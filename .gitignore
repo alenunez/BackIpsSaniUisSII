@@ -29,4 +29,9 @@ build/
 
 ### VS Code ###
 .vscode/
-src/main/resources/application.properties
+src/main/resources/
+src/main/java/com/proyecto/saniUis/util/
+target/
+
+pom.xml
+

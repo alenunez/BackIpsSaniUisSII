@@ -13,6 +13,7 @@ import com.proyecto.saniUis.service.interfaces.IUsuarioService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 
 @Service
@@ -34,7 +35,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
-    public Usuario findById(Long id) {
+    public Usuario findById(UUID id) {
         return usuarioRepository.findById(id).orElse(null);
     }
 
@@ -47,7 +48,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         if (optionalUsuario.isPresent()) {
             Usuario usuario = optionalUsuario.get();
             // Verificar la contraseña
-            if (usuario.getContraseña().equals(contraseña)) {
+            if (usuario.getContrasena().equals(contraseña)) {
                 // La contraseña es correcta, devolver el DTO del usuario
                 return usuario;
             }
@@ -80,7 +81,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
-    public Usuario deleteUsuario(Long id){
+    public Usuario deleteUsuario(UUID id){
         Usuario usuario = usuarioRepository.findById(id).orElseThrow(null);
         if(usuario != null){
             usuarioRepository.delete(usuario);

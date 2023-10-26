@@ -12,7 +12,7 @@ public interface UsuarioMappers {
 
     UsuarioMappers INSTANCE = Mappers.getMapper(UsuarioMappers.class);
 
-    @Mapping(target = "descripcionRol", source = "rol.descripcion")
+    @Mapping(target = "descripcionRol", source = "rol.rolNombre")
     UsuarioDTO usuarioToUsuarioDTO(Usuario usuario);
 
     @Mapping(target = "contrasena", source = "contrasena") // Si los nombres son diferentes
