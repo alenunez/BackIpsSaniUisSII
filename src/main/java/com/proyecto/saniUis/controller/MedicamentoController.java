@@ -23,7 +23,7 @@ public class MedicamentoController {
     IMedicamentoService iMedicamentoService;
 
     @PostMapping("/insert")
-    public ResponseEntity<MedicamentoDTO> createMedicamento(@RequestBody MedicamentoDTO medicamentoDTO) {
+    public  ResponseEntity<MedicamentoDTO> createMedicamento(@RequestBody MedicamentoDTO medicamentoDTO) {
 
         MedicamentoDTO medicamentoDTOCreated = MedicamentoMapper.INSTANCE.toDto(iMedicamentoService.createMedicamento(medicamentoDTO));
 

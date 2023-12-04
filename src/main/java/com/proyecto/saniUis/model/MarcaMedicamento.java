@@ -26,7 +26,7 @@ public class MarcaMedicamento {
     private Long idMarcaMedicamento;
 
     @Column(name = "DESCRIPCION", nullable = false)
-    private String descripcion;
+    private  String descripcion;
 
     @Column(name = "FECHA_CREACION")
     private LocalDateTime fechaCreacion;

@@ -34,7 +34,7 @@ public class UsuarioController {
     IUsuarioService iUsuarioService;
 
     @PostMapping("/insert")
-    public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO usuarioDTO) {
+    public  ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO usuarioDTO) {
 
         UsuarioDTO usuarioDTOCreated = UsuarioMappersImpl.INSTANCE.usuarioToUsuarioDTO(iUsuarioService.createUsuario(usuarioDTO));
 
