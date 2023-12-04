@@ -1,4 +1,4 @@
-package com.proyecto.saniUis.model;
+package com.Proyecto.BackIpsSaniUis.model;
 
 import java.time.LocalDateTime;
 

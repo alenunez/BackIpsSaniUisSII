@@ -1,11 +1,11 @@
-package com.proyecto.saniUis.mappers;
+package com.Proyecto.BackIpsSaniUis.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.proyecto.saniUis.dto.UsuarioDTO;
-import com.proyecto.saniUis.model.Usuario;
+import com.Proyecto.BackIpsSaniUis.dto.UsuarioDTO;
+import com.Proyecto.BackIpsSaniUis.model.Usuario;
 
 @Mapper
 public interface UsuarioMappers {

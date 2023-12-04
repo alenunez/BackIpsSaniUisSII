@@ -1,10 +1,12 @@
-package com.proyecto.saniUis.model;
+package com.Proyecto.BackIpsSaniUis.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Table(schema = "GENERAL", name = "MEDICAMENTO")
 public class Medicamento {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_MEDICAMENTO")

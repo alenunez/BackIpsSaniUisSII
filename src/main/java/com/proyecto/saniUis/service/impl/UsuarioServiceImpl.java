@@ -1,19 +1,17 @@
-package com.proyecto.saniUis.service.impl;
+package com.Proyecto.BackIpsSaniUis.service.impl;
 
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.proyecto.saniUis.dto.UsuarioDTO;
-import com.proyecto.saniUis.mappers.UsuarioMappers;
-import com.proyecto.saniUis.model.Usuario;
-import com.proyecto.saniUis.repository.UsuarioRepository;
-import com.proyecto.saniUis.service.interfaces.IUsuarioService;
-
 import java.util.List;
 import java.util.Optional;
 
+import com.Proyecto.BackIpsSaniUis.dto.UsuarioDTO;
+import com.Proyecto.BackIpsSaniUis.mappers.UsuarioMappers;
+import com.Proyecto.BackIpsSaniUis.model.Usuario;
+import com.Proyecto.BackIpsSaniUis.repository.UsuarioRepository;
+import com.Proyecto.BackIpsSaniUis.service.interfaces.IUsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {

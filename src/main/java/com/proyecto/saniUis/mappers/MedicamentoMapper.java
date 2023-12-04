@@ -1,10 +1,11 @@
-package com.proyecto.saniUis.mappers;
+package com.Proyecto.BackIpsSaniUis.mappers;
 
-import com.proyecto.saniUis.dto.MedicamentoDTO;
-import com.proyecto.saniUis.model.Medicamento;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+
+import com.Proyecto.BackIpsSaniUis.dto.MedicamentoDTO;
+import com.Proyecto.BackIpsSaniUis.model.Medicamento;
 
 @Mapper
 public interface MedicamentoMapper {

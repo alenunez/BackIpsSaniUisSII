@@ -1,39 +1,50 @@
-package com.proyecto.saniUis.controller;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.proyecto.saniUis.dto.MedicamentoDTO;
-import com.proyecto.saniUis.mappers.MedicamentoMapper;
-import com.proyecto.saniUis.model.Medicamento;
-import com.proyecto.saniUis.service.interfaces.IMedicamentoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+package com.Proyecto.BackIpsSaniUis.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Proyecto.BackIpsSaniUis.dto.MedicamentoDTO;
+import com.Proyecto.BackIpsSaniUis.mappers.MedicamentoMapper;
+import com.Proyecto.BackIpsSaniUis.mappers.MedicamentoMapperImpl;
+import com.Proyecto.BackIpsSaniUis.model.Medicamento;
+import com.Proyecto.BackIpsSaniUis.service.interfaces.IMedicamentoService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RequestMapping("/medicamento")
 public class MedicamentoController {
+    
     IMedicamentoService iMedicamentoService;
 
     @PostMapping("/insert")
-    public  ResponseEntity<MedicamentoDTO> createMedicamento(@RequestBody MedicamentoDTO medicamentoDTO) {
+    public ResponseEntity<MedicamentoDTO> createMedicamento(@RequestBody MedicamentoDTO medicamentoDTO) {
 
-        MedicamentoDTO medicamentoDTOCreated = MedicamentoMapper.INSTANCE.toDto(iMedicamentoService.createMedicamento(medicamentoDTO));
+        MedicamentoDTO medicamentoDTOCreated = MedicamentoMapperImpl.INSTANCE.toDto(iMedicamentoService.createMedicamento(medicamentoDTO));
 
         return new ResponseEntity<>(medicamentoDTOCreated, HttpStatus.CREATED);
     }
-
+    
     @PutMapping("/update")
     public ResponseEntity<MedicamentoDTO> updateMedicamento(@RequestBody MedicamentoDTO medicamentoDTO) {
 
-        MedicamentoDTO medicamentoDTOUpdate= MedicamentoMapper.INSTANCE.toDto(iMedicamentoService.updateMedicamento(medicamentoDTO));
+        MedicamentoDTO medicamentoDTOUpdate= MedicamentoMapperImpl.INSTANCE.toDto(iMedicamentoService.updateMedicamento(medicamentoDTO));
 
         if(medicamentoDTOUpdate != null){
             return new ResponseEntity<>(medicamentoDTOUpdate, HttpStatus.OK);
@@ -48,7 +59,7 @@ public class MedicamentoController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(listaMedicamentos.stream().map(MedicamentoMapper.INSTANCE
-                ::toDto).collect(Collectors.toList()), HttpStatus.OK);
+        ::toDto).collect(Collectors.toList()), HttpStatus.OK);
     }
 
     @GetMapping("/id/{id}")
@@ -67,17 +78,17 @@ public class MedicamentoController {
             return ResponseEntity.status(HttpStatus.NO_CONTENT)
                     .body("{\"message\": \"No existe el medicamento con el id ingresado\"}");
         }
-
+        
         // Crear un objeto JSON para devolver como respuesta
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("message", "Se ha eliminado el registro");
-
+        
         return ResponseEntity.status(HttpStatus.OK).body(jsonResponse);
     }
 
     @Autowired
-    public MedicamentoController(@Qualifier("medicamentoServiceImpl") IMedicamentoService iMedicamentoService) {
+    public MedicamentoController(IMedicamentoService iMedicamentoService) {
         this.iMedicamentoService = iMedicamentoService;
     }
 

@@ -1,10 +1,10 @@
-package com.proyecto.saniUis.dto;
+package com.Proyecto.BackIpsSaniUis.dto;
 
 import java.time.LocalDateTime;
 
 public class UsuarioDTO {
 
-    private Long  idUsuario;
+    private Long idUsuario;
     private String primerNombre;
     private String contrasena;
     private String segundoNombre;

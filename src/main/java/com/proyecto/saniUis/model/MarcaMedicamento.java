@@ -1,4 +1,4 @@
-package com.proyecto.saniUis.model;
+package com.Proyecto.BackIpsSaniUis.model;
 
 import java.time.LocalDateTime;
 
@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(schema = "GENERAL", name = "MARCA_MEDICAMENTO")
 public class MarcaMedicamento {
+        
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +27,12 @@ public class MarcaMedicamento {
     private Long idMarcaMedicamento;
 
     @Column(name = "DESCRIPCION", nullable = false)
-    private  String descripcion;
-
+    private String descripcion;
+    
     @Column(name = "FECHA_CREACION")
     private LocalDateTime fechaCreacion;
 
-
+    
 
 
 }

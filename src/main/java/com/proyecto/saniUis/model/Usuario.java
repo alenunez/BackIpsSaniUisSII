@@ -1,4 +1,4 @@
-package com.proyecto.saniUis.model;
+package com.Proyecto.BackIpsSaniUis.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(schema = "GENERAL", name = "USUARIO")
 public class Usuario {
 

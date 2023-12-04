@@ -1,10 +1,9 @@
-package com.proyecto.saniUis.repository;
+package com.Proyecto.BackIpsSaniUis.repository;
 
-import com.proyecto.saniUis.model.Medicamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
+import com.Proyecto.BackIpsSaniUis.model.Medicamento;
 
 public interface MedicamentoRepository extends JpaRepository<Medicamento, Long> {
-
+    
 }

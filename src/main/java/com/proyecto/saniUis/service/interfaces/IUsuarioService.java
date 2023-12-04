@@ -1,12 +1,11 @@
-package com.proyecto.saniUis.service.interfaces;
+package com.Proyecto.BackIpsSaniUis.service.interfaces;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.proyecto.saniUis.dto.UsuarioDTO;
-import com.proyecto.saniUis.model.Usuario;
-
+import com.Proyecto.BackIpsSaniUis.dto.UsuarioDTO;
+import com.Proyecto.BackIpsSaniUis.model.Usuario;
 
 @Service
 public interface IUsuarioService {

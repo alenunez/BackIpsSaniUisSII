@@ -1,4 +1,4 @@
-package com.proyecto.saniUis.controller;
+package com.Proyecto.BackIpsSaniUis.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,22 +19,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Proyecto.BackIpsSaniUis.dto.UsuarioDTO;
+import com.Proyecto.BackIpsSaniUis.mappers.UsuarioMappers;
+import com.Proyecto.BackIpsSaniUis.mappers.UsuarioMappersImpl;
+import com.Proyecto.BackIpsSaniUis.model.Usuario;
+import com.Proyecto.BackIpsSaniUis.service.interfaces.IUsuarioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.proyecto.saniUis.dto.UsuarioDTO;
-import com.proyecto.saniUis.mappers.UsuarioMappers;
-import com.proyecto.saniUis.mappers.UsuarioMappersImpl;
-import com.proyecto.saniUis.model.Usuario;
-import com.proyecto.saniUis.service.interfaces.IUsuarioService;
 
 @RestController
-@CrossOrigin(origins = "**", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RequestMapping("/usuario")
 public class UsuarioController {
 
     IUsuarioService iUsuarioService;
 
     @PostMapping("/insert")
-    public  ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO usuarioDTO) {
+    public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO usuarioDTO) {
 
         UsuarioDTO usuarioDTOCreated = UsuarioMappersImpl.INSTANCE.usuarioToUsuarioDTO(iUsuarioService.createUsuario(usuarioDTO));
 

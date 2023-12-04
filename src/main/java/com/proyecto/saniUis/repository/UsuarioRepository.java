@@ -1,12 +1,11 @@
-package com.proyecto.saniUis.repository;
+package com.Proyecto.BackIpsSaniUis.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.proyecto.saniUis.model.Usuario;
-
+import com.Proyecto.BackIpsSaniUis.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
